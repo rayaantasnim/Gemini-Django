@@ -1,79 +1,124 @@
-# 🚀 Gemini Django Single-File Core
+<div align="center">
 
-[![System Status](https://shields.io)](#)
-[![Python Engine](https://shields.io)](#)
-[![Framework](https://shields.io)](#)
+# ⚡ Gemini-Django
 
-A production-ready hybrid web application that merges a complete **Django server environment** and a **Gemini Dual-Pass AI orchestration workflow** straight into a single, self-contained execution script (`main.py`). This project is designed for rapid prototype scaling and secure GitHub deployments without the typical framework file bloat.
+**A self-contained, single-file Django web application driving a dynamic Dual-Pass Gemini AI workspace.**
 
----
-
-## 📸 Architecture & System Preview
-
-### Core Infrastructure Blueprint
-![Server Core Infrastructure](https://pexels.com)
-
-### AI Synthesis Workspace
-![Developer Workspace Context](https://pexels.com)
+![System Status](https://img.shields.io/badge/System_Status-Online-brightgreen?style=flat-square)
+![Engine](https://img.shields.io/badge/Engine-Dual--Pass_SDK-blue?style=flat-square)
+![Framework](https://img.shields.io/badge/Framework-Django_Hybrid-0C4B33?style=flat-square&logo=django)
 
 ---
 
-## 🧠 Architectural Deep-Dive
+</div>
 
-Click the expandable panels below to explore the functional mechanics running inside `main.py`:
+## 📌 Overview
+
+**Gemini-Django** bridges a complete, production-ready Django backend configuration and a high-reasoning dual-pass AI architecture directly inside a single execution file: `main.py`. By leveraging inline programmatic runtime settings via `settings.configure()`, this architecture eliminates traditional multi-directory boilerplate clutter while serving a responsive, Tailwind CSS-powered dashboard interface. User interactions trigger a sequential two-stage synthesis process, routing raw prompts through swift contextual pre-processing before delivering polished, high-fidelity AI output.
+
+---
+
+## 🖼️ Media Reference Gallery
+
+<div align="center">
+
+| Core Infrastructure Blueprint | AI Synthesis Workspace |
+| :---: | :---: |
+| [![Core Infrastructure Blueprint](https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800)](https://pexels.com) | [![AI Synthesis Workspace](https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800)](https://pexels.com) |
+| *Single-file Django setup & SDK routing* | *Dual-Pass Gemini synthesis engine* |
+
+</div>
+
+---
+
+## 🏗️ Architectural Deep-Dive
 
 <details>
-<summary><b>⚡ Pass 1: Intent Flash Preprocessor</b></summary>
+<summary><b>🔍 Pass 1: Intent Flash Preprocessor</b></summary>
+
 <br>
-When a raw message hits the backend controller, it is routed straight into <code>gemini-2.5-flash</code>. This pass programmatically expands minimal or vague human inputs, extracting explicit structural demands, developer restrictions, and hidden intent profiles before formatting a highly comprehensive metaprompt payload.
+
+The initial pipeline phase utilizes `gemini-2.5-flash` to execute fast, low-latency analysis on incoming user requests. It sanitizes user input, classifies core intent, extracts critical entities, and generates structured contextual directives. This pre-processing pass minimizes latency while ensuring the secondary model receives optimized, well-bounded system instructions.
+
 </details>
 
 <details>
 <summary><b>🧠 Pass 2: High-Reasoning Execution Engine</b></summary>
+
 <br>
-The augmented payload from Pass 1 is securely dispatched directly into <code>gemini-2.5-pro</code>. Operating under strict system rules (defined inside the <code>GenerateContentConfig</code>), this engine processes the complex programmatic directives to generate top-tier, accurate, and deeply structured technical answers.
+
+The secondary pipeline phase routes the enriched output from Pass 1 into `gemini-2.5-pro`. Serving as the primary cognitive layer, `gemini-2.5-pro` performs deep logical inference, multi-step problem solving, and complex code synthesis. It delivers the final, refined technical payload back to the interface with high accuracy and domain depth.
+
 </details>
 
 <details>
-<summary><b>🛠️ Single-File Hybrid Routing Model</b></summary>
+<summary><b>⚡ Single-File Hybrid Routing Model</b></summary>
+
 <br>
-Instead of splitting configurations across multiple directories, all database setup, base configurations, URL patterns, UI templates, and API methods execute entirely out of <code>main.py</code> using an in-memory configuration engine initialized via <code>settings.configure()</code>.
+
+`main.py` encapsulates the entire Django ecosystem without requiring external management scripts (`manage.py`) or separate application directories. Inside `main.py`:
+* **Settings:** Configured programmatically using `django.conf.settings.configure()`.
+* **Routing:** URL patterns defined dynamically via `django.urls.path`.
+* **Views:** Functional request handlers manage API interaction and UI rendering inline.
+* **Execution:** WSGI application server startup and command-line entry loops execute seamlessly in place.
+
 </details>
 
 ---
 
-## 🛠️ Getting Started & Installation
+## 🚀 Getting Started & Installation
 
-### 1. Install System Dependencies
-Install the required packages in your local environment container:
+Follow these steps to deploy the local single-file environment.
+
+### 1. Clone Repository & Prepare Virtual Environment
+
+```bash
+git clone https://github.com/rayaantasnim/Gemini-Django.git
+cd Gemini-Django
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 2. Install Core Dependencies
+
 ```bash
 pip install django google-genai
 ```
 
-### 2. Run the Web Server
-Launch the server directly using your main script:
+### 3. Launch the Server
+
+Execute the entry point directly using `main.py`:
+
 ```bash
 python main.py
 ```
 
-> 🔑 **Security Alert:** If the engine does not detect a `GEMINI_API_KEY` preset inside your local environment variable map, the console will safely mask your input and prompt you to paste your key securely right in the terminal window before allowing initialization.
+> 🔒 **Security Notice:** During execution startup, `main.py` utilizes secure terminal prompting (`getpass`) to capture your Google GenAI API key safely without persisting credentials or environment exposure in code logs.
 
-### 3. Open the Dashboard Interface
-Once the local development web server initiates successfully, point your browser viewport to:
+### 4. Access Interactive Dashboard
+
+Open your web browser and navigate to:
 ```text
-http://127.0.0
+http://127.0.0.1:8000
 ```
 
 ---
 
-## 🔮 Scalability Map
+## 📈 Scalability Path
 
-* **Ecosystem Conversion:** When you are ready to expand past a single-file template framework, execute `python manage.py startapp chatbot` to automatically partition your code logic into classic modular files (`models.py`, `views.py`, `urls.py`).
-* **Asynchronous Streams:** The frontend is built on highly accessible asynchronous JavaScript `fetch()` calls, ready to be stepped up with Django Channels or server-sent events for live, character-by-character token response streaming.
+While `main.py` serves as a powerful, zero-boilerplate runtime proof-of-concept, you can scale the application using standard growth vectors:
+
+* **Modular Refactoring (`startapp`):** Transition from inline configuration to standard Django project structure using `python -m django startapp` when scaling data models and database migrations.
+* **Asynchronous Token Streaming:** Upgrade view functions to handle asynchronous generation streams using Django Channels or ASGI websockets for real-time token rendering from the `google-genai` SDK.
+* **Persistent Storage:** Integrate Django ORM models to log dual-pass prompt history and track system token usage over time.
 
 ---
 
-<p align="center">
-  <sub>© 2026 Gemini Django Platform Core Architecture.</sub><br>
-  <b>Authorized by <a href="https://github.com/rayaantasnim">RAYAAN TASNIM</a></b>
-</p>
+<br>
+
+<div align="center">
+
+Authorized by [RAYAAN TASNIM](https://github.com/rayaantasnim)
+
+</div>
